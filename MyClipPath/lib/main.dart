@@ -34,15 +34,17 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: ClipPath(
-          clipper: MyCustomClipper(),
-          child: Container(
-            height: MediaQuery.of(context).size.height * 0.5,
-            width: double.infinity,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/sand.jpg'), fit: BoxFit.cover)),
-          )),
+      body: Column(children: [
+        ClipPath(
+            clipper: MyCustomClipper(),
+            child: Container(
+              height: MediaQuery.of(context).size.height * 0.5,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/sand.jpg'), fit: BoxFit.cover)),
+            )),
+      ]),
     );
   }
 }
